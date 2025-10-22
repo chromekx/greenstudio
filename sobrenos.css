@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+:root {
+  --bg-body: #d3d3d3;
+  --bg-menu: #ffffff;
+  --color-text: #ffffff;
+}
+
+@font-face {
+  font-family: "Daydream";
+  src: url("fonts/daydream.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Digital Disco";
+  src: url("fonts/digital-disco.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gallaecia";
+  src: url("fonts/gallaecia-forte.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body.dark-theme {
+  --bg-body: #121212;
+  --bg-menu: #000000;
+  --color-text: #ffffff;
+}
+
+/* containers claros -> cinza escuro no modo escuro */
+
+body {
+  background-color: var(--bg-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+header.scrolled {
+  background: var(--bg-menu);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo {
+  height: 55px;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 25px;
+  font-family: "Digital Disco", sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.menu a:hover {
+  transform: scale(1.1);
+}

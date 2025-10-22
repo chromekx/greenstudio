@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="imagem/simbolo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <title>Green Studio</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="imgs/lumaw.png" alt="Logo Green Studio" class="logo" id="claro">
+      <ul class="menu">
+        <li><a href="https://brasil.un.org/pt-br/sdgs" target="_blank">ODS's</a></li>
+        <li><a href="https://www.instagram.com/1.info.senac/" target="_blank">Redes Sociais</a></li>
+        <li><a href="/suporte" target="_blank">Suporte</a></li>
+        <li><a href="sobrenos.html">Sobre&nbsp;Nós</a></li>
+        <li><img src="imgs/cla.svg" id="labubu" class="labubu" alt="Alternar tema" style="cursor: pointer;"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <img src="imgs/Design sem nome (1).png" alt="Hero image">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h2 class="hero-title">Projeto Integrador</h2>
+      <h1 class="hero-subtitle">Green Studio</h1>
+    </div>
+  </div>
+
+  <div class="container texto">
+    <p class="label">O que são as ODS?</p>
+    <p>As <strong>ODS</strong> (Objetivos de Desenvolvimento Sustentável) fazem parte da <em>Agenda 2030</em> da ONU.
+      São um conjunto de <strong>17 objetivos globais</strong> criados para enfrentar os maiores desafios do mundo, como
+      erradicação da pobreza, redução das desigualdades, proteção do meio ambiente e promoção da paz e prosperidade.</p>
+    <p>Cada objetivo possui metas específicas e interligadas, que devem ser alcançadas até 2030. A ideia é que governos,
+      empresas, escolas e sociedade atuem juntos para construir um futuro mais justo, inclusivo e sustentável.</p>
+  </div>
+
+  <div class="container ods">
+    <div class="wheel-wrap" id="wheelWrap">
+      <svg id="wheelSvg" viewBox="0 0 520 520" aria-label="Roda dos ODS - 17 setores" role="application"></svg>
+      <div class="center-label" id="centerLabel"><strong>ODS</strong></div>
+    </div>
+
+    <div class="info">
+      <img src="ods/arrow-left-solid-full.svg" style="width: 100px;">
+      <div class="sla2">
+        <p><span style="font-family: 'Daydream'">Ficou indeciso?</span>Sorteie uma ODS aleatória para descobrir sobre!
+        </p>
+        <div class="btns">
+          <button id="girarRoletaBtn" class="girarRoletaBtn">Girar Roleta</button>
+          <button class="girarRoletaBtn" id="clearBtn">Desmarcar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+
+  <footer>
+    <div class="footer-content">
+      <p><span style="font-family: sans-serif;">&copy;</span> 2025 Grupo Green Studio. Todos os direitos reservados.
+      </p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/1.info.senac/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

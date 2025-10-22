@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suporte GS</title>
+  <link rel="stylesheet" href="suporte.css">
+  <link rel="icon" type="image/x-icon" href="imagem/simbolo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jersey+10&amp;display=swap">
+</head>
+
+<body>
+  <header>
+    <div class="nome">
+      <img src="imagem/logo2_texto_branco_final.png" alt="logo" class=nome>
+    </div>
+  </header>
+  <main>
+
+    <body>
+      <div class="crie">
+        <br>
+        <p class="negrito">Ajuda e Suporte</p>
+      </div>
+      <br>
+      <br>
+      <div class="container">
+        <form id="formtalentos" action="#" method="post">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" required><br><br>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required><br><br>
+
+          <fieldset class="problemas">
+            <legend>Qual foi seu problema:</legend>
+            <label><input type="checkbox" name="problema">Travamento</label>
+            <label><input type="checkbox" name="problema">Página não carrega</label>
+            <label><input type="checkbox" name="problema">Imagem não carrega</label>
+            <label><input type="checkbox" name="problema">Links não abrem</label>
+            <label><input type="checkbox" name="problema">Outro</label>
+          </fieldset>
+
+          <label for="mensagem">Descreva seu problema com a plataforma.</label>
+          <textarea id="mensagem" name="mensagem" rows="5" cols="90" required></textarea>
+
+          <div class="botoes">
+            <input type="submit" value="Enviar">
+            <span id="mensagem-erro"></span>
+            <input type="reset" value="Limpar">
+          </div>
+        </form>
+      </div>
+
+      <script>
+        document.querySelector('.nome').onclick = function () {
+          window.location.href = 'home.html';
+        };
+      </script>
+
+    </body>
+  </main>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="imagem/simbolo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sobrenos.css">
+    <title>Sobre Nós</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="imgs/lumaw.png" alt="Logo Green Studio" class="logo" id="claro">
+            <ul class="menu">
+                <li><a href="https://brasil.un.org/pt-br/sdgs" target="_blank">ODS's</a></li>
+                <li><a href="https://www.instagram.com/1.info.senac/" target="_blank">Redes Sociais</a></li>
+                <li><a href="/suporte" target="_blank">Suporte</a></li>
+                <li><a href="/Sobre-Nós">Sobre&nbsp;Nós</a></li>
+                <li><img src="imgs/cla.svg" id="labubu" class="labubu" alt="Alternar tema" style="cursor: pointer;">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <label class="titulo" for=".container">Sobre Nós</label>
+    <div class="container">
+
+    </div>
+
+    <script>
+        // ELEMENTOS
+        const $body = document.body;
+        const $themeBtn = document.getElementById("labubu");
+        const $logoImg = document.getElementById("claro");
+
+        // ------------------------------
+        // CARREGAR TEMA SALVO
+        // ------------------------------
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            $body.classList.add("dark-theme");
+            $logoImg.src = "imgs/lumaw.png";
+            $themeBtn.src = "imgs/claro.svg";
+        } else {
+            $body.classList.add("light-theme");
+            $logoImg.src = "imgs/lumaw.png";
+            $themeBtn.src = "imgs/claro.svg";
+        }
+
+        // ------------------------------
+        // ALTERAR TEMA AO CLICAR
+        // ------------------------------
+        $themeBtn.addEventListener("click", () => {
+            const $menuLinks = document.querySelectorAll('.menu a');
+            if ($body.classList.contains("dark-theme")) {
+                $body.classList.remove("dark-theme");
+                $body.classList.add("light-theme");
+                localStorage.setItem("theme", "light");
+
+                if (window.scrollY > 40) {
+                    $logoImg.src = "imgs/lumab.png";
+                    $themeBtn.src = "imgs/escuro.svg";
+                    $menuLinks.forEach(link => link.style.color = "#000000ff");
+                } else {
+                    $logoImg.src = "imgs/lumaw.png";
+                    $themeBtn.src = "imgs/claro.svg";
+                    $menuLinks.forEach(link => link.style.color = "#ffffffff");
+                }
+            } else {
+                $body.classList.remove("light-theme");
+                $body.classList.add("dark-theme");
+                localStorage.setItem("theme", "dark");
+
+                $logoImg.src = "imgs/lumaw.png";
+                $themeBtn.src = "imgs/claro.svg";
+                $menuLinks.forEach(link => link.style.color = "#fff");
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const $header = document.querySelector('header');
+            const $menuLinks = document.querySelectorAll('.menu a');
+
+            if (window.scrollY > 40) {
+                $header.classList.add('scrolled');
+
+                if ($body.classList.contains("light-theme")) {
+                    $logoImg.src = "imgs/lumab.png";
+                    $themeBtn.src = "imgs/escuro.svg";
+                    $menuLinks.forEach(link => link.style.color = "#000000ff");
+                }
+
+                if ($body.classList.contains("dark-theme")) {
+                    $logoImg.src = "imgs/lumaw.png";
+                    $themeBtn.src = "imgs/claro.svg";
+                    $menuLinks.forEach(link => link.style.color = "#ffffffff");
+                }
+
+            } else {
+                $header.classList.remove('scrolled');
+
+                if ($body.classList.contains("light-theme")) {
+                    $logoImg.src = "imgs/lumaw.png";
+                    $themeBtn.src = "imgs/claro.svg";
+                    $menuLinks.forEach(link => link.style.color = "#ffffffff");
+                }
+
+                if ($body.classList.contains("dark-theme")) {
+                    $logoImg.src = "imgs/lumaw.png";
+                    $themeBtn.src = "imgs/claro.svg";
+                    $menuLinks.forEach(link => link.style.color = "#fff");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
