@@ -28,97 +28,101 @@
         </nav>
     </header>
 
-    <label class="titulo" for=".container">Sobre Nós</label>
-    <div class="container">
+    <div class="" <label class="titulo" for=".container">Sobre Nós</label>
+        <div class="container">
 
-    </div>
+        </div>
 
-    <script>
-        // ELEMENTOS
-        const $body = document.body;
-        const $themeBtn = document.getElementById("labubu");
-        const $logoImg = document.getElementById("claro");
+        <script>
+            // ELEMENTOS
+            const $body = document.body;
+            const $themeBtn = document.getElementById("labubu");
+            const $logoImg = document.getElementById("claro");
 
-        // ------------------------------
-        // CARREGAR TEMA SALVO
-        // ------------------------------
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "dark") {
-            $body.classList.add("dark-theme");
-            $logoImg.src = "imgs/lumaw.png";
-            $themeBtn.src = "imgs/claro.svg";
-        } else {
-            $body.classList.add("light-theme");
-            $logoImg.src = "imgs/lumaw.png";
-            $themeBtn.src = "imgs/claro.svg";
-        }
+            document.querySelector(".logo").onclick = function () {
+                window.location.href = "index.html";
+            }
 
-        // ------------------------------
-        // ALTERAR TEMA AO CLICAR
-        // ------------------------------
-        $themeBtn.addEventListener("click", () => {
-            const $menuLinks = document.querySelectorAll('.menu a');
-            if ($body.classList.contains("dark-theme")) {
-                $body.classList.remove("dark-theme");
-                $body.classList.add("light-theme");
-                localStorage.setItem("theme", "light");
-
-                if (window.scrollY > 40) {
-                    $logoImg.src = "imgs/lumab.png";
-                    $themeBtn.src = "imgs/escuro.svg";
-                    $menuLinks.forEach(link => link.style.color = "#000000ff");
-                } else {
-                    $logoImg.src = "imgs/lumaw.png";
-                    $themeBtn.src = "imgs/claro.svg";
-                    $menuLinks.forEach(link => link.style.color = "#ffffffff");
-                }
-            } else {
-                $body.classList.remove("light-theme");
+            // ------------------------------
+            // CARREGAR TEMA SALVO
+            // ------------------------------
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
                 $body.classList.add("dark-theme");
-                localStorage.setItem("theme", "dark");
-
                 $logoImg.src = "imgs/lumaw.png";
                 $themeBtn.src = "imgs/claro.svg";
-                $menuLinks.forEach(link => link.style.color = "#fff");
-            }
-        });
-
-        window.addEventListener('scroll', () => {
-            const $header = document.querySelector('header');
-            const $menuLinks = document.querySelectorAll('.menu a');
-
-            if (window.scrollY > 40) {
-                $header.classList.add('scrolled');
-
-                if ($body.classList.contains("light-theme")) {
-                    $logoImg.src = "imgs/lumab.png";
-                    $themeBtn.src = "imgs/escuro.svg";
-                    $menuLinks.forEach(link => link.style.color = "#000000ff");
-                }
-
-                if ($body.classList.contains("dark-theme")) {
-                    $logoImg.src = "imgs/lumaw.png";
-                    $themeBtn.src = "imgs/claro.svg";
-                    $menuLinks.forEach(link => link.style.color = "#ffffffff");
-                }
-
             } else {
-                $header.classList.remove('scrolled');
+                $body.classList.add("light-theme");
+                $logoImg.src = "imgs/lumaw.png";
+                $themeBtn.src = "imgs/claro.svg";
+            }
 
-                if ($body.classList.contains("light-theme")) {
-                    $logoImg.src = "imgs/lumaw.png";
-                    $themeBtn.src = "imgs/claro.svg";
-                    $menuLinks.forEach(link => link.style.color = "#ffffffff");
-                }
-
+            // ------------------------------
+            // ALTERAR TEMA AO CLICAR
+            // ------------------------------
+            $themeBtn.addEventListener("click", () => {
+                const $menuLinks = document.querySelectorAll('.menu a');
                 if ($body.classList.contains("dark-theme")) {
+                    $body.classList.remove("dark-theme");
+                    $body.classList.add("light-theme");
+                    localStorage.setItem("theme", "light");
+
+                    if (window.scrollY > 40) {
+                        $logoImg.src = "imgs/lumab.png";
+                        $themeBtn.src = "imgs/escuro.svg";
+                        $menuLinks.forEach(link => link.style.color = "#000000ff");
+                    } else {
+                        $logoImg.src = "imgs/lumaw.png";
+                        $themeBtn.src = "imgs/claro.svg";
+                        $menuLinks.forEach(link => link.style.color = "#ffffffff");
+                    }
+                } else {
+                    $body.classList.remove("light-theme");
+                    $body.classList.add("dark-theme");
+                    localStorage.setItem("theme", "dark");
+
                     $logoImg.src = "imgs/lumaw.png";
                     $themeBtn.src = "imgs/claro.svg";
                     $menuLinks.forEach(link => link.style.color = "#fff");
                 }
-            }
-        });
-    </script>
+            });
+
+            window.addEventListener('scroll', () => {
+                const $header = document.querySelector('header');
+                const $menuLinks = document.querySelectorAll('.menu a');
+
+                if (window.scrollY > 40) {
+                    $header.classList.add('scrolled');
+
+                    if ($body.classList.contains("light-theme")) {
+                        $logoImg.src = "imgs/lumab.png";
+                        $themeBtn.src = "imgs/escuro.svg";
+                        $menuLinks.forEach(link => link.style.color = "#000000ff");
+                    }
+
+                    if ($body.classList.contains("dark-theme")) {
+                        $logoImg.src = "imgs/lumaw.png";
+                        $themeBtn.src = "imgs/claro.svg";
+                        $menuLinks.forEach(link => link.style.color = "#ffffffff");
+                    }
+
+                } else {
+                    $header.classList.remove('scrolled');
+
+                    if ($body.classList.contains("light-theme")) {
+                        $logoImg.src = "imgs/lumaw.png";
+                        $themeBtn.src = "imgs/claro.svg";
+                        $menuLinks.forEach(link => link.style.color = "#ffffffff");
+                    }
+
+                    if ($body.classList.contains("dark-theme")) {
+                        $logoImg.src = "imgs/lumaw.png";
+                        $themeBtn.src = "imgs/claro.svg";
+                        $menuLinks.forEach(link => link.style.color = "#fff");
+                    }
+                }
+            });
+        </script>
 </body>
 
 </html>

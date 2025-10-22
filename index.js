@@ -3,6 +3,10 @@ const $body = document.body;
 const $themeBtn = document.getElementById("labubu");
 const $logoImg = document.getElementById("claro");
 
+document.querySelector(".logo").onclick = function () {
+    window.location.href = "index.html";
+}
+
 // ------------------------------
 // CARREGAR TEMA SALVO
 // ------------------------------
