@@ -34,11 +34,11 @@ $themeBtn.addEventListener("click", () => {
         if (window.scrollY > 40) {
             $logoImg.src = "imgs/lumab.png";
             $themeBtn.src = "imgs/escuro.svg";
-            $menuLinks.forEach(link => link.style.color = "#000000ff");
+            $menuLinks.forEach(link => link.style.color = "#fff");
         } else {
             $logoImg.src = "imgs/lumaw.png";
             $themeBtn.src = "imgs/claro.svg";
-            $menuLinks.forEach(link => link.style.color = "#ffffffff");
+            $menuLinks.forEach(link => link.style.color = "#000");
         }
     } else {
         $body.classList.remove("light-theme");
@@ -51,45 +51,10 @@ $themeBtn.addEventListener("click", () => {
     }
 });
 
-window.addEventListener('scroll', () => {
-    const $header = document.querySelector('header');
-    const $menuLinks = document.querySelectorAll('.menu a');
-
-    if (window.scrollY > 40) {
-        $header.classList.add('scrolled');
-
-        if ($body.classList.contains("light-theme")) {
-            $logoImg.src = "imgs/lumab.png";
-            $themeBtn.src = "imgs/escuro.svg";
-            $menuLinks.forEach(link => link.style.color = "#000000ff");
-        }
-
-        if ($body.classList.contains("dark-theme")) {
-            $logoImg.src = "imgs/lumaw.png";
-            $themeBtn.src = "imgs/claro.svg";
-            $menuLinks.forEach(link => link.style.color = "#ffffffff");
-        }
-
-    } else {
-        $header.classList.remove('scrolled');
-
-        if ($body.classList.contains("light-theme")) {
-            $logoImg.src = "imgs/lumaw.png";
-            $themeBtn.src = "imgs/claro.svg";
-            $menuLinks.forEach(link => link.style.color = "#ffffffff");
-        }
-
-        if ($body.classList.contains("dark-theme")) {
-            $logoImg.src = "imgs/lumaw.png";
-            $themeBtn.src = "imgs/claro.svg";
-            $menuLinks.forEach(link => link.style.color = "#fff");
-        }
-    }
-});
-
+// REMOVIDO: listener de scroll que mudava a cor do header ao rolar
+// (Mantive a lógica de tema ao clicar; o header não será mais alterado automaticamente ao scroll)
 
 // círculo central
-
 
 const odsNames = [
     'Erradicação da Pobreza',
