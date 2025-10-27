@@ -114,7 +114,7 @@ header.dark-theme {
   margin: 0;
 }
 
-.menu a {
+.menu a, .botaotema {
   background-color: #fff;
   text-decoration: none;
   padding: 7px 30px;
