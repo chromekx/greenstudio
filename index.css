@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Lexend';
 }
 
 :root {
@@ -11,22 +12,50 @@
 }
 
 @font-face {
-  font-family: "Daydream";
+  font-family: 'Daydream';
   src: url("fonts/daydream.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Digital Disco";
-  src: url("fonts/digital-disco.ttf") format("opentype");
+  font-family: 'Weight';
+  src: url("fonts/weight.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Gallaecia";
-  src: url("fonts/gallaecia-forte.ttf") format("opentype");
+  font-family: 'Stretch Pro';
+  src: url("fonts/stretch-pro.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nexa';
+  src: url("fonts/nexa.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url("fonts/lexend.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url("fonts/poppins.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Viga';
+  src: url("fonts/viga.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -36,8 +65,6 @@ body.dark-theme {
   --bg-menu: #000000;
   --color-text: #ffffff;
 }
-
-/* containers claros -> cinza escuro no modo escuro */
 
 body {
   background-color: var(--bg-body);
@@ -53,7 +80,6 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: #fff;
   color: #000;
   transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
@@ -66,37 +92,48 @@ header.dark-theme {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   padding: 10px 20px;
 }
 
 .logo {
-  height: 55px;
+  height: 50px;
+}
+
+.labubu {
+  background-color: #fff;
+  padding: 7px 30px;
+  border-radius: 50px;
 }
 
 .menu {
   align-items: center;
   display: flex;
-  gap: 70px;
+  gap: 30px;
   list-style: none;
   margin: 0;
 }
 
 .menu a {
+  background-color: #fff;
   text-decoration: none;
-  color: var(--color-text);
-  font-size: 25px;
-  font-family: "Digital Disco", sans-serif;
-  transition: transform 0.2s ease;
+  padding: 7px 30px;
+  border-radius: 50px;
+  color: #000;
+  font-size: 17px;
+  transition: all 0.2s ease;
 }
 
 .menu a:hover {
-  transform: scale(1.1);
+  background-color: #ddd;
+}
+
+.menu a:active {
+  background-color: #4d945d;
 }
 
 .carousel-item, .carousel-item .active {
-  width: 100%;
-  height: 800px;
+  aspect-ratio: 16/9;
   object-position: center;
   object-fit: cover;
 }
@@ -115,7 +152,7 @@ button {
   border-radius: 10px;
   margin: 70px;
   font-size: 30px;
-  font-family: "Digital Disco", sans-serif;
+  font-family: 'Digital Disco', sans-serif;
   line-height: 40px;
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.178);
   width: 100%;
