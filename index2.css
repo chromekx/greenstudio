@@ -31,31 +31,18 @@
     padding: 0;
     font-family: 'Lexend';
     scroll-behavior: smooth;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
-body.dark-mode {
+body.dark-mode,
+.dark-btn.dark-mode,
+.item.dark-mode,
+.icon.dark-mode,
+.container.dark-mode,
+.carousel-control-next.dark-mode,
+.carousel-control-prev.dark-mode {
     background-color: #222;
-}
-
-.dark-btn.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-.item.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-.icon.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-.container.dark-mode {
-    background-color: #222;
-    color: #fff;
+    color: #fff !important;
 }
 
 .items.open {
@@ -74,6 +61,7 @@ header {
     justify-content: center;
     z-index: 50;
     align-items: center;
+    position: fixed;
 }
 
 .items {
@@ -94,11 +82,14 @@ header {
     cursor: pointer;
 }
 
+.logo img {
+    width: 100px;
+}
+
 .item {
     min-width: 100px;
     color: #000000;
     background-color: #ffffff;
-    cursor: pointer;
     padding: 5px;
     border-radius: 50px;
     text-align: center;
@@ -112,11 +103,10 @@ header {
 }
 
 .dark-btn {
-    margin-left: 1s0px;
+    margin-left: 10px;
     width: 50px;
     color: #000;
     background-color: #ffffff;
-    cursor: pointer;
     padding: 3px;
     border-radius: 50px;
     text-align: center;
@@ -129,14 +119,19 @@ header {
 .item:hover,
 .logo:hover,
 .dark-btn:hover,
-.icon:hover {
+.icon:hover,
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
     transform: translateY(5px);
     filter: drop-shadow(0px 0px 0px #000000);
+    transition: 0.3s ease;
 }
 
 .item:active,
 .dark-btn:active,
-.icon:active {
+.icon:active,
+.carousel-control-next:active,
+.carousel-control-prev:active {
     background-color: #4d945d;
     color: #fff;
 }
@@ -147,7 +142,6 @@ header {
     width: 50px;
     color: #000;
     background-color: #ffffff;
-    cursor: pointer;
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
@@ -162,12 +156,12 @@ header {
 }
 
 @media (max-width: 768px) {
+
+    /* para transformar o header em menu hamburguer */
     header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        position: relative;
-        /* necessário para posicionar o menu internamente */
         z-index: 10;
         padding: 20px;
     }
@@ -177,7 +171,7 @@ header {
         top: 100%;
         left: 0;
         flex-direction: column;
-        transition: translate 0.5s ease-in;
+        transition: translate 0.5s;
         z-index: 20;
         translate: -150px 0px;
     }
@@ -193,4 +187,44 @@ header {
     .logo {
         margin: 0;
     }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    height: 50px;
+    width: 50px;
+    color: #000 !important;
+    background-color: #ffffff;
+    border-radius: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 3px solid #000;
+    filter: drop-shadow(0px 5px 0px #000000);
+    justify-self: center;
+    z-index: 10;
+    translate: 0px 50px;
+    opacity: 1 !important;
+}
+
+.carousel-indicators {
+    gap: 10px;
+}
+
+.carousel-indicators button {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50%;
+}
+
+.carousel-indicators button.active {
+    border: 3px solid #000;
+    filter: drop-shadow(0px 3px 0px #000000);
+    background-color: #4d945d;
+    transition: 0.5s;
+}
+
+.controls {
+    display: flex;
+    height: auto;
 }
