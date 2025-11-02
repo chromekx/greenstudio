@@ -1,10 +1,11 @@
-var botaoTema = document.querySelector('.tema');
-var header = document.querySelectorAll('.menu a');
-var container = document.querySelectorAll('container');
+let darkBtn = document.querySelector('.dark-btn');
+let items = document.querySelectorAll('.item');
+let containers = document.querySelectorAll('.container');
 
-botaoTema.addEventListener('click', function() {
-    header.style.backgroundColor = "#000";
-    header.style.color = "#fff";
-    container.style.backgroundColor = "#000";
-    container.style.color="#fff";
-});
+function darkTheme() {
+    console.log('O botão de modo escuro foi pressionado.');
+    items.forEach(link => link.classList.toggle('dark-mode'));
+    containers.forEach(c => c.classList.toggle('dark-mode'));
+    darkBtn.classList.toggle('dark-mode');
+    document.body.classList.toggle('dark-mode');
+};

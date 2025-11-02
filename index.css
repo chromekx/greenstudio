@@ -12,6 +12,27 @@
   --color-text: #ffffff;
 }
 
+#tema.modoescuro {
+  background-color: #000;
+  color: #fff;
+  filter: drop-shadow(0px 5px 0px #333333);
+}
+
+.menu a.modoescuro {
+  color: #fff;
+  background-color: #000000;
+  filter: drop-shadow(0px 5px 0px #333333);
+}
+
+.container.modoescuro {
+  color: #fff;
+  background-color: #000;
+}
+
+body.modoescuro {
+  background-color: #000;
+}
+
 @font-face {
   font-family: 'Daydream';
   src: url("fonts/daydream.otf") format("opentype");
@@ -61,14 +82,8 @@
   font-style: normal;
 }
 
-body.dark-theme {
-  --bg-body: #121212;
-  --bg-menu: #000000;
-  --color-text: #ffffff;
-}
-
-body {
-  background-color: var(--bg-body);
+body.modoescuro {
+  background-color: #000;
 }
 
 html {
@@ -105,8 +120,7 @@ header {
   margin: 0;
 }
 
-.menu a,
-.tema {
+.menu a {
   background-color: #fff;
   text-decoration: none;
   padding: 5px 20px;
@@ -117,9 +131,15 @@ header {
   filter: drop-shadow(0px 8px 0px #000);
 }
 
-.tema {
+#tema {
   font-size: 22px;
   padding: 5px;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  color: #000;
+  cursor: pointer;
+  filter: drop-shadow(0px 8px 0px #000);
 }
 
 .logo:hover, .menu a:hover,
