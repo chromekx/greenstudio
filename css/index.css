@@ -205,9 +205,15 @@ header {
     }
 }
 
-.carousel-item,
-.carousel-item.active {
-    height: 950px;
+.carousel {
+    box-shadow: 0px 10px 40px #0000005e;
+}
+
+.carousel-item img,
+.carousel-item.active img {
+    height: 750px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .carousel-control-prev,
@@ -331,7 +337,6 @@ header {
 }
 
 .container.roda {
-    flex-direction: row;
     justify-content: center;
 }
 
@@ -362,7 +367,7 @@ svg {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: white;
+    background: #fff;
     display: grid;
     place-items: center;
     text-align: center;
