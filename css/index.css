@@ -56,7 +56,12 @@ body.dark-mode,
 }
 
 .container.dark-mode:hover {
-    filter: drop-shadow(0px 0px 10px #ffffff4f)
+    filter: drop-shadow(0px 0px 10px #ffffff4f);
+}
+
+.carousel.dark-mode {
+    box-shadow: 0px 10px 40px #ffffff4f;
+    border-bottom: 0.5px solid #ffffff;
 }
 
 .items.open {
@@ -338,7 +343,38 @@ header {
 }
 
 .container.roda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.container.roda .sla2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.container.roda img {
+    max-width: 100px;
+    height: auto;
+}
+
+.rodinha {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sla2 img {
+    transform: rotate(90)
+}
+
+.sla2 span {
+    
 }
 
 svg {
@@ -430,4 +466,48 @@ button.clear {
     align-items: stretch;
     justify-content: center;
     width: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 190px;
+    background-color: #000000;
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+footer p {
+    font-size: 23px;
+    margin-bottom: 25px;
+    font-family: 'Stretch Pro';
+}
+
+.containerfooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.redesfooter {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.redesfooter a {
+    color: #fff;
+    font-size: 40px;
+    transition: color 0.2s, scale 0.2s;
+}
+
+.redesfooter a:hover {
+    color: #4d945d;
+    scale: 115%;
 }

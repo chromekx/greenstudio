@@ -19,6 +19,7 @@ function darkTheme() {
     carouselControlPrev.classList.toggle('dark-mode');
     document.querySelectorAll('.symbol i').forEach(symbol => symbol.classList.toggle('dark-mode'));
     document.querySelectorAll('.symbol p').forEach(symbol => symbol.classList.toggle('dark-mode'));
+    document.querySelector('.carousel').classList.toggle('dark-mode');
 };
 
 function openMenu() {
