@@ -32,13 +32,14 @@
     font-family: 'Lexend';
     scroll-behavior: smooth;
     transition: all 0.3s ease;
+    color: #000;
 }
 
 body.dark-mode,
 .dark-btn.dark-mode,
 .item.dark-mode,
 .icon.dark-mode,
-.containr.dark-mode,
+.container.dark-mode,
 .carousel-control-next.dark-mode,
 .carousel-control-prev.dark-mode,
 .symbol i.dark-mode {
@@ -139,8 +140,8 @@ header {
 .carousel-control-next:active,
 .carousel-control-prev:active,
 .symbol i:active {
-    background-color: #4d945d;
-    color: #fff;
+    background-color: #4d945d !important;
+    color: #fff !important;
 }
 
 .icon {
@@ -198,9 +199,9 @@ header {
 
 .carousel-control-prev,
 .carousel-control-next {
-    position: absolute;  /* Anchor to the carousel container */
-    top: 50%;           /* Place at vertical midpoint */
-    transform: translateY(-50%);  /* Shift up by half the button height to center */
+    position: absolute; /* Anchor to the carousel container */
+    top: 50%; /* Place at vertical midpoint */
+    transform: translateY(-50%); /* Shift up by half the button height to center */
     height: 50px;
     width: 50px;
     color: #000 !important;
@@ -215,11 +216,13 @@ header {
 }
 
 .carousel-control-prev {
-    left: 15px;  /* Position near the left edge */
+    left: 15px;
+    /* Position near the left edge */
 }
 
 .carousel-control-next {
-    right: 15px;  /* Position near the right edge */
+    right: 15px;
+    /* Position near the right edge */
 }
 
 .carousel-indicators {
@@ -239,12 +242,12 @@ header {
     transition: 0.5s;
 }
 
-.containr.symbols {
-    background-color: #fff;
+.symbols {
     display: flex;
+    background-color: transparent;
     justify-content: center;
     gap: 100px;
-    padding: 50px;
+    padding: 40px;
     flex-wrap: wrap;
 }
 
@@ -269,7 +272,15 @@ header {
 }
 
 .symbol p {
+    margin-top: 10px;
     font-size: 30px;
     color: #000;
     font-family: 'Weight';
+}
+
+.container {
+    display: flex;
+    margin: 20px !important;
+    background-color: #fff;
+    padding: 20px;
 }

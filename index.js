@@ -15,8 +15,8 @@ function darkTheme() {
     document.body.classList.toggle('dark-mode');
     carouselControlNext.classList.toggle('dark-mode');
     carouselControlPrev.classList.toggle('dark-mode');
-    document.querySelectorAll('.symbol i').classList.toggle('dark-mode');
-    document.querySelectorAll('.symbol p').classList.toggle('dark-mode');
+    document.querySelectorAll('.symbol i').forEach(symbol => symbol.classList.toggle('dark-mode'));
+    document.querySelectorAll('.symbol p').forEach(symbol => symbol.classList.toggle('dark-mode'));
 };
 
 function openMenu() {
