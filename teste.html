@@ -1,47 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<style>
-button {
-  position: relative;
-  padding: 10px 20px;
-  background: #3498db;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  overflow: hidden;
-}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Roda ODS - interativa</title>
+    <style>
+        :root {
+            --size: 520px
+        }
 
-/* ::before — adiciona um ícone antes do texto */
-button::before {
-  content: "★ ";
-}
+        body {
+            font-family: system-ui, Segoe UI, Roboto, Arial;
+            margin: 24px;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start
+        }
 
-/* ::after — cria um efeito animado ao clicar */
-button::after {
-  content: "a";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.3);
-  animation: brilho 2s infinite;
-}
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
 
-/* @keyframes — define a animação do brilho */
-@keyframes brilho {
-  0% { left: -100%; }
-  50% { left: 100%; }
-  100% { left: 100%; }
-}
-</style>
+        .wheel-wrap {
+            width: var(--size);
+            height: var(--size);
+            display: grid;
+            place-items: center;
+            position: relative
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            display: block
+        }
+
+        .center-label {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: white;
+            display: grid;
+            place-items: center;
+            font-weight: 600;
+            text-align: center
+        }
+
+        .info {
+            max-width: 420px
+        }
+
+        .info p {
+            margin: 8px 0
+        }
+
+        path.sector {
+            cursor: pointer;
+            stroke: #ffffff00;
+            stroke-width: 2;
+            transition: filter .12s ease
+        }
+
+        path.sector:hover {
+            filter: brightness(.9)
+        }
+
+        path.sector.selected {
+            stroke: #222;
+            stroke-width: 3;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .25))
+        }
+
+        image.icon {
+            pointer-events: none
+        }
+
+        button.clear {
+            margin-top: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #f7f7f7
+        }
+    </style>
 </head>
+
 <body>
+    <div class="container">
+        <div class="wheel-wrap" id="wheelWrap">
+            <svg id="wheelSvg" viewBox="0 0 520 520" aria-label="Roda dos ODS - 17 setores" role="application"></svg>
+            <div class="center-label" id="centerLabel">ODS</div>
+        </div>
+        <div class="info">
+            <p>Clique em qualquer setor da roda para agir como botão. O clique chama
+                <code>onSegmentClick(index, name)</code>.
+            </p>
+            <button class="clear" id="clearBtn">Desmarcar</button>
+        </div>
+    </div>
 
-<button>Clique Aqui</button>
+    <script>
+        const odsNames = [
+        'Água Potável e Saneamento', 'Energia Acessível e Limpa', 'Trabalho Decente e Crescimento Econômico', 'Indústria, Inovação e Infraestrutura',
+            'Redução das Desigualdades', 'Cidades e Comunidades Sustentáveis', 'Consumo e Produção Responsáveis', 'Ação contra a Mudança Global do Clima',
+            'Vida na Água', 'Vida Terrestre', 'Paz, Justiça e Instituições Eficazes', 'Parcerias e Meios de Implementação'
+        ];
 
+        const odsColors = [
+            '#E5243B', '#DDA63A', '#4C9F38', '#C5192D', '#FF3A21', '#26BDE2', '#FCC30B', '#A21942', '#FD6925', '#DD1367', '#FD9D24', '#BF8B2E', '#3F7E44', '#0A97D9', '#56C02B', '#00689D', '#19486A'
+        ];
+
+        const svg = document.getElementById('wheelSvg');
+        const cx = 260, cy = 260, rOuter = 250, rInner = 90;
+        const sectors = 17;
+
+        function polarToCartesian(cx, cy, r, angleDeg) {
+            const a = (angleDeg - 90) * Math.PI / 180.0;
+            return { x: cx + (r * Math.cos(a)), y: cy + (r * Math.sin(a)) };
+        }
+
+        function describeArc(cx, cy, r1, r2, startAngle, endAngle) {
+            const startOuter = polarToCartesian(cx, cy, r1, endAngle);
+            const endOuter = polarToCartesian(cx, cy, r1, startAngle);
+            const startInner = polarToCartesian(cx, cy, r2, startAngle);
+            const endInner = polarToCartesian(cx, cy, r2, endAngle);
+            const largeArc = endAngle - startAngle <= 180 ? 0 : 1;
+            return ['M', startOuter.x, startOuter.y,
+                'A', r1, r1, 0, largeArc, 0, endOuter.x, endOuter.y,
+                'L', startInner.x, startInner.y,
+                'A', r2, r2, 0, largeArc, 1, endInner.x, endInner.y, 'Z'].join(' ');
+        }
+
+        for (let i = 0; i < sectors; i++) {
+            const start = (i * 360 / sectors);
+            const end = ((i + 1) * 360 / sectors);
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', describeArc(cx, cy, rOuter, rInner, start, end));
+            path.setAttribute('fill', odsColors[i]);
+            path.setAttribute('class', 'sector');
+            path.dataset.index = i;
+            path.dataset.name = odsNames[i];
+            path.setAttribute('role', 'button');
+            path.setAttribute('tabindex', '0');
+            path.setAttribute('aria-label', `ODS ${i + 1} - ${odsNames[i]}`);
+            path.addEventListener('click', () => onSegmentClick(i, odsNames[i], path));
+            path.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); path.click(); } });
+            svg.appendChild(path);
+
+            // ícone
+            const midAngle = start + (end - start) / 2;
+            const p = polarToCartesian(cx, cy, (rOuter + rInner) / 2, midAngle);
+            const icon = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+            icon.setAttribute('href', `https://raw.githubusercontent.com/SDG-Indicators/sdg-icons/master/goal-${String(i + 1).padStart(2, '0')}/GOAL_${String(i + 1).padStart(2, '0')}_MAIN_RGB.png`);
+            icon.setAttribute('x', p.x - 20);
+            icon.setAttribute('y', p.y - 20);
+            icon.setAttribute('width', 40);
+            icon.setAttribute('height', 40);
+            icon.setAttribute('class', 'icon');
+            svg.appendChild(icon);
+        }
+
+        const centerCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        centerCircle.setAttribute('cx', cx);
+        centerCircle.setAttribute('cy', cy);
+        centerCircle.setAttribute('r', rInner - 2);
+        centerCircle.setAttribute('fill', 'white');
+        centerCircle.setAttribute('pointer-events', 'none');
+        svg.appendChild(centerCircle);
+
+        let lastSelected = null;
+        function onSegmentClick(index, name, pathEl) {
+            if (lastSelected) lastSelected.classList.remove('selected');
+            if (lastSelected === pathEl) { lastSelected = null; updateCenter(); return; }
+            pathEl.classList.add('selected');
+            lastSelected = pathEl;
+            updateCenter(index, name);
+            console.log('clicado ODS', index + 1, name);
+        }
+
+        function updateCenter(index, name) {
+            const center = document.getElementById('centerLabel');
+            if (index == null) { center.textContent = 'ODS'; center.style.fontSize = '28px'; }
+            else { center.textContent = `ODS ${index + 1}\n${name}`; center.style.whiteSpace = 'pre-line'; center.style.fontSize = '14px'; }
+        }
+
+        document.getElementById('clearBtn').addEventListener('click', () => { if (lastSelected) lastSelected.classList.remove('selected'); lastSelected = null; updateCenter(); });
+        window.onSegmentClick = onSegmentClick;
+    </script>
 </body>
 </html>

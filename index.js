@@ -1,6 +1,6 @@
 let darkBtn = document.querySelector('.dark-btn');
 let items = document.querySelectorAll('.item');
-let containers = document.querySelectorAll('.container');
+let containers = document.querySelectorAll('.containr');
 let menuBtn = document.querySelector('.icon');
 let menu = document.querySelector('.items');
 let carouselControlNext = document.querySelector('.carousel-control-next');
@@ -15,6 +15,8 @@ function darkTheme() {
     document.body.classList.toggle('dark-mode');
     carouselControlNext.classList.toggle('dark-mode');
     carouselControlPrev.classList.toggle('dark-mode');
+    document.querySelectorAll('.symbol i').classList.toggle('dark-mode');
+    document.querySelectorAll('.symbol p').classList.toggle('dark-mode');
 };
 
 function openMenu() {
