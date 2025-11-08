@@ -141,7 +141,7 @@ header {
     border-radius: 50px;
     text-align: center;
     margin: 0;
-    font-size: clamp(10px, 2.5vw, 13px);
+    font-size: clamp(13px, 2.5vw, 13px);
     text-decoration: none;
     text-wrap: nowrap;
     border: 3px solid #000;
@@ -151,14 +151,13 @@ header {
 
 .dark-btn {
     margin-left: 10px;
-    width: clamp(40px, 2.5vw, 50px);
-    height: clamp(40px, 2.5vw, 50px);
+    width: 40px;
+    height: 40px;
     color: #000;
     background-color: #ffffff;
-    padding: 3px;
     border-radius: 50%;
     text-align: center;
-    font-size: clamp(20px, 2.5vw, 25px);
+    font-size: clamp(20px, 2.5vw, 23px);
     border: 3px solid #000;
     filter: drop-shadow(0px 5px 0px #000);
     cursor: pointer;
@@ -177,6 +176,7 @@ header {
     border: 3px solid #000;
     filter: drop-shadow(0px 5px 0px #000);
     cursor: pointer;
+    padding: 1px;
 }
 
 #menu {
@@ -214,6 +214,10 @@ header {
     .dark-btn,
     .logo {
         margin: 0;
+    }
+
+    .dark-btn {
+        padding: 3px;
     }
 }
 
@@ -328,7 +332,7 @@ header {
     border-radius: 50px;
     width: 100%;
     background-color: #fff;
-    padding: clamp(20px, 4.5vw, 40px);
+    padding: clamp(40px, 4.5vw, 60px);
     flex-direction: column;
     color: #000;
     margin: 0;
@@ -358,7 +362,6 @@ header {
 
 .container.roda {
     max-width: 2000px;
-    padding: clamp(40px, 4.5vw, 60px);
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -513,10 +516,10 @@ footer {
     margin-top: 40px;
 }
 
-footer p {
-    font-size: clamp(11px, 2vw, 21px);
+footer h2 {
+    font-size: clamp(13px, 2vw, 21px);
     font-family: 'Stretch Pro';
-    margin: 0;
+    margin: 10px;
 }
 
 .containerfooter {
