@@ -29,7 +29,7 @@ function darkTheme() {
 function openMenu() {
     console.log('O menu foi aberto.');
     menu.classList.toggle('open');
-}
+};
 
 // círculo central
 
