@@ -41,7 +41,9 @@ body.dark-mode,
 .icon.dark-mode,
 .container.dark-mode,
 .carousel-control-next.dark-mode,
-.carousel-control-prev.dark-mode {
+.carousel-control-prev.dark-mode,
+.girarRoletaBtn.dark-mode,
+.clearBtn.dark-mode {
     background-color: #222 !important;
     color: #fff !important;
 }
@@ -69,18 +71,44 @@ body.dark-mode,
     transition: translate 0.5s ease;
 }
 
+.item:hover,
+.logo:hover,
+.dark-btn:hover,
+.icon:hover,
+.carousel-control-next:hover,
+.carousel-control-prev:hover,
+.symbol i:hover,
+.girarRoletaBtn:hover,
+.clearBtn:hover {
+    translate: 0px 5px;
+    filter: drop-shadow(0px 0px 0px #000);
+    transition: 0.3s ease;
+}
+
+.item:active,
+.dark-btn:active,
+.icon:active,
+.carousel-control-next:active,
+.carousel-control-prev:active,
+.symbol i:active,
+.girarRoletaBtn:active,
+.clearBtn:active {
+    background-color: #4d945d !important;
+    color: #fff !important;
+}
+
 body {
     background-color: #e7e7e7;
 }
 
 header {
     width: 100%;
-    height: 70px;
+    height: clamp(50px, 2.5vw, 70px);
     display: flex;
     justify-content: center;
     z-index: 50;
     align-items: center;
-    position: fixed;
+    position: absolute;
 }
 
 .items {
@@ -102,7 +130,7 @@ header {
 }
 
 .logo img {
-    width: 80px;
+    width: clamp(60px, 4vw, 80px);
 }
 
 .item {
@@ -113,7 +141,7 @@ header {
     border-radius: 50px;
     text-align: center;
     margin: 0;
-    font-size: 13px;
+    font-size: clamp(10px, 2.5vw, 13px);
     text-decoration: none;
     text-wrap: nowrap;
     border: 3px solid #000;
@@ -123,49 +151,28 @@ header {
 
 .dark-btn {
     margin-left: 10px;
-    width: 50px;
+    width: clamp(40px, 2.5vw, 50px);
+    height: clamp(40px, 2.5vw, 50px);
     color: #000;
     background-color: #ffffff;
     padding: 3px;
     border-radius: 50%;
     text-align: center;
-    font-size: 25px;
+    font-size: clamp(20px, 2.5vw, 25px);
     border: 3px solid #000;
     filter: drop-shadow(0px 5px 0px #000);
     cursor: pointer;
 }
 
-.item:hover,
-.logo:hover,
-.dark-btn:hover,
-.icon:hover,
-.carousel-control-next:hover,
-.carousel-control-prev:hover,
-.symbol i:hover {
-    translate: 0px 5px;
-    filter: drop-shadow(0px 0px 0px #000);
-    transition: 0.3s ease;
-}
-
-.item:active,
-.dark-btn:active,
-.icon:active,
-.carousel-control-next:active,
-.carousel-control-prev:active,
-.symbol i:active {
-    background-color: #4d945d !important;
-    color: #fff !important;
-}
-
 .icon {
     display: none;
-    height: 50px;
-    width: 50px;
+    height: clamp(40px, 2.5vw, 50px);
+    width: clamp(40px, 2.5vw, 50px);
     color: #000;
     background-color: #fff;
     border-radius: 50%;
     text-align: center;
-    font-size: 30px;
+    font-size: clamp(22px, 2.5vw, 30px);
     font-weight: bold;
     border: 3px solid #000;
     filter: drop-shadow(0px 5px 0px #000);
@@ -176,9 +183,7 @@ header {
     display: none;
 }
 
-@media (max-width: 768px) {
-
-    /* para transformar o header em menu hamburguer */
+@media (max-width: 768px) { /* para transformar o header em menu hamburguer */
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -230,12 +235,12 @@ header {
     /* Place at vertical midpoint */
     transform: translateY(-50%);
     /* Shift up by half the button height to center */
-    height: 50px;
-    width: 50px;
+    height: clamp(40px, 2.5vw, 50px);
+    width: clamp(40px, 2.5vw, 50px);
     color: #000 !important;
     background-color: #ffffff;
     border-radius: 50%;
-    font-size: 30px;
+    font-size: clamp(25px, 2.5vw, 30px);
     font-weight: bold;
     cursor: pointer;
     border: 3px solid #000;
@@ -274,7 +279,7 @@ header {
     display: flex;
     background-color: transparent;
     justify-content: center;
-    gap: 100px;
+    gap: clamp(40px, 2.5vw, 100px);
     padding: 40px;
     padding-bottom: 0px;
     flex-wrap: wrap;
@@ -286,14 +291,13 @@ header {
     text-align: center;
     cursor: pointer;
     align-content: center;
-
 }
 
 .symbol i {
     width: 100px;
     height: 100px;
     align-content: center;
-    font-size: 60px;
+    font-size: clamp(40px, 1vw, 70px);
     background-color: #fff;
     color: #4d945d;
     border-radius: 50px;
@@ -310,11 +314,9 @@ header {
 
 .conjunto {
     display: flex;
-    align-items: stretch;
     justify-content: center;
-    padding: 40px;
+    padding: clamp(20px, 2.5vw, 40px);
     gap: 40px;
-    flex-grow: 1;
 }
 
 .container {
@@ -323,9 +325,11 @@ header {
     border: 3px solid #000;
     border-radius: 50px;
     background-color: #fff;
-    padding: 30px;
+    padding: clamp(20px, 4.5vw, 40px);
     flex-direction: column;
+    color: #000;
     margin: 0;
+    font-size: clamp(14px, 2.5vw, 20px);
 }
 
 .container:hover {
@@ -342,25 +346,24 @@ header {
     color: #4d945d;
 }
 
+.conjunto.roda {
+    display: flex;
+    align-content: stretch;
+    width: 100%;
+    padding-top: 0px;
+}
+
 .container.roda {
+    max-width: 2000px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    flex-direction: row;
     justify-content: center;
-    gap: 30px;
-    text-align: center;
-}
-
-.container.roda .sla2 {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
-}
-
-.container.roda img {
-    max-width: 100px;
-    height: auto;
+    text-align: center;
+    flex-grow: 1;
+    flex: 1;
+    gap: 40px;
 }
 
 .rodinha {
@@ -369,30 +372,52 @@ header {
     width: 100%;
 }
 
-.sla2 img {
-    transform: rotate(90)
+.sla2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    text-wrap: wrap;
+    width: fit-content;
 }
 
-.sla2 span {
-    
+.sla2 h2 {
+    font-size: clamp(25px, 2.5vw, 60px);
+
+}
+
+.sla2 p {
+    font-size: clamp(18px, 2.5vw, 30px);
+}
+
+.fa-arrow-right {
+    font-size: clamp(50px, 2vw, 80px);
+    margin-top: -100px;
+    rotate: 0deg;
 }
 
 svg {
     width: 100%;
-    height: 100%;
-    display: block
+    height: auto;
 }
 
 .wheel-wrap {
     display: flex;
     justify-self: center;
     border-radius: 50%;
-    border: 10px solid #4d945d;
-    width: 500px;
-    height: 500px;
+    border: 3px solid #000000;
+    filter: drop-shadow(0px 5px 0px #000);
+    max-width: 500px;
+    width: 100%;
+    height: auto;
     display: grid;
-    place-items: center;
-    position: relative
+    position: relative;
+    margin-bottom: 20px;
 }
 
 .center-label {
@@ -400,22 +425,27 @@ svg {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
-    width: 200px;
-    height: 200px;
+    border: 3px solid #000000;
+    filter: drop-shadow(0px 5px 0px #000);
+    padding: 10px;
+    max-width: 200px;
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
     border-radius: 50%;
     background: #fff;
+    color: #000 !important;
     display: grid;
     place-items: center;
     text-align: center;
-    font-size: 20px !important;
-    line-height: 28px;
+    font-size: clamp(13px, 1vw, 20px) !important; /* mínimo, tamanho ideal, máximo */
+    line-height: clamp(16px, 1.5vw, 28px);
 }
 
 path.sector {
     cursor: pointer;
     stroke-width: 2;
-    transition: filter .12s ease
+    transition: 1s ease;
 }
 
 path.sector:hover {
@@ -423,8 +453,7 @@ path.sector:hover {
 }
 
 path.sector.selected {
-    stroke: #222;
-    filter: drop-shadow(0px 0px 10px #00000040)
+    stroke: #000000;
 }
 
 image.icon {
@@ -445,20 +474,19 @@ button.clear {
     stroke: none;
 }
 
-.girarRoletaBtn {
+.girarRoletaBtn, .clearBtn {
     margin: 8px;
     display: block;
-    padding: 15px 32px;
-    font-size: 22px;
-    background-color: #4d945d;
-    color: #fff;
+    width: 100%;
+    padding: 15px clamp(20px, 2vw, 32px);
+    font-size: clamp(13px, 1vw, 22px);
+    background-color: #ffffff;
+    color: #000000;
     border: none;
-    border-radius: 12px;
+    border-radius: 50px;
     cursor: pointer;
-}
-
-.girarRoletaBtn:hover {
-    background-color: #23432a;
+    border: 3px solid #000000;
+    filter: drop-shadow(0px 5px 0px #000);
 }
 
 .btns {
@@ -471,10 +499,9 @@ button.clear {
 footer {
     width: 100%;
     height: 190px;
-    background-color: #000000;
+    background-color: #23432a;
     font-weight: bold;
     color: #fff;
-    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -482,7 +509,7 @@ footer {
 }
 
 footer p {
-    font-size: 23px;
+    font-size: clamp(11px, 2vw, 21px);
     margin-bottom: 25px;
     font-family: 'Stretch Pro';
 }
@@ -503,11 +530,15 @@ footer p {
 
 .redesfooter a {
     color: #fff;
-    font-size: 40px;
+    font-size: clamp(30px, 2.5vw, 35px);
     transition: color 0.2s, scale 0.2s;
 }
 
 .redesfooter a:hover {
     color: #4d945d;
     scale: 115%;
+}
+
+@media (max-width: px) {
+
 }

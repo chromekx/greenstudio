@@ -1,11 +1,13 @@
-let darkBtn = document.querySelector('.dark-btn');
-let items = document.querySelectorAll('.item');
-let containers = document.querySelectorAll('.container');
-let containersText = document.querySelectorAll('.container p');
-let menuBtn = document.querySelector('.icon');
-let carouselControlNext = document.querySelector('.carousel-control-next');
-let carouselControlPrev = document.querySelector('.carousel-control-prev');
-let menu = document.querySelector('.items');
+const darkBtn = document.querySelector('.dark-btn');
+const items = document.querySelectorAll('.item');
+const containers = document.querySelectorAll('.container');
+const containersText = document.querySelectorAll('.container p');
+const menuBtn = document.querySelector('.icon');
+const carouselControlNext = document.querySelector('.carousel-control-next');
+const carouselControlPrev = document.querySelector('.carousel-control-prev');
+const menu = document.querySelector('.items');
+const girarBtn = document.querySelector('.girarRoletaBtn');
+const desmarcarBtn = document.querySelector('.clearBtn');
 
 function darkTheme() {
     console.log('O botão de modo escuro foi pressionado.');
@@ -20,6 +22,8 @@ function darkTheme() {
     document.querySelectorAll('.symbol i').forEach(symbol => symbol.classList.toggle('dark-mode'));
     document.querySelectorAll('.symbol p').forEach(symbol => symbol.classList.toggle('dark-mode'));
     document.querySelector('.carousel').classList.toggle('dark-mode');
+    girarBtn.classList.toggle('dark-mode');
+    desmarcarBtn.classList.toggle('dark-mode');
 };
 
 function openMenu() {
@@ -56,7 +60,8 @@ const odsColors = [
 ];
 
 const svg = document.getElementById('wheelSvg');
-const cx = 260, cy = 260, rOuter = 250, rInner = 90;
+const cx = 250, cy = 250, rOuter = 250, rInner = 90;
+svg.setAttribute('viewBox', '0 0 500 500');
 const sectors = 17;
 
 function polarToCartesian(cx, cy, r, angleDeg) {
@@ -108,18 +113,18 @@ for (let i = 0; i < sectors; i++) {
     svg.appendChild(selectCircle);
 
     // ícone SVG branco
-    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-    icon.setAttributeNS('http://www.w3.org/1999/xlink', 'href', `ods/${i + 1}.svg`);
-    icon.setAttribute('x', p.x - 25);
-    icon.setAttribute('y', p.y - 25);
-    icon.setAttribute('width', 50);
-    icon.setAttribute('height', 50);
-    icon.setAttribute('class', 'icon');
+    const sticker = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+    sticker.setAttributeNS('http://www.w3.org/1999/xlink', 'href', `./ods/${i + 1}.svg`);
+    sticker.setAttribute('x', p.x - 25);
+    sticker.setAttribute('y', p.y - 25);
+    sticker.setAttribute('width', 50);
+    sticker.setAttribute('height', 50);
+    sticker.setAttribute('class', 'sticker');
     // Remova pointer-events:none para permitir clique
-    // icon.setAttribute('style', 'pointer-events:none;');
+    // sticker.setAttribute('style', 'pointer-events:none;');
     // Torna o ícone clicável e dispara o clique do setor
-    icon.addEventListener('click', () => path.click());
-    svg.appendChild(icon);
+    sticker.addEventListener('click', () => path.click());
+    svg.appendChild(sticker);
 
     // Salve referência do círculo de seleção no path
     path.selectCircle = selectCircle;
