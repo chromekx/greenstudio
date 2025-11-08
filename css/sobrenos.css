@@ -48,6 +48,10 @@ body.dark-mode,
     filter: drop-shadow(0px 0px 10px #ffffff4f);
 }
 
+.integrante img.dark-mode:hover {
+    box-shadow: 0px 0px 10px #ffffff4f;
+}
+
 .items.open {
     translate: 10px 0px;
     transition: translate 0.5s ease;
@@ -201,7 +205,7 @@ header {
 }
 
 .empty {
-    height: clamp(50px, 3vw, 100px);
+    height: clamp(65px, 4vw, 100px);
     width: 100%;
 }
 
@@ -210,7 +214,7 @@ header {
     display: flex;
     overflow: hidden;
     color: #000;
-    justify-items: center;
+    justify-content: center;
 }
 
 .title h1,
@@ -219,9 +223,12 @@ header {
     width: 100%;
     font-weight: normal;
     font-family: 'Stretch Pro';
-    font-size: clamp(25px, 5vw, 40px);
+    font-size: clamp(20px, 5vw, 40px);
     margin: 20px 40px;
+    text-align: center;
     text-wrap: wrap;
+    justify-content: left;
+    /* adicionar */
 }
 
 .title h2 {
@@ -283,10 +290,9 @@ header {
 }
 
 .integrante img {
-    width: 150px;
-    height: 150px;
+    width: clamp(120px, 10vw, 150px);
+    height: clamp(120px, 10vw, 150px);
     align-content: center;
-    font-size: clamp(40px, 1vw, 70px);
     background-color: #fff;
     color: #4d945d;
     border-radius: 50%;
@@ -295,17 +301,17 @@ header {
 }
 
 .integrante img:hover {
-    filter: drop-shadow(0px 0px 10px #4d945d4f);
+    box-shadow: 0px 0px 10px #4d945d4f;
 }
 
 .integrante p {
     text-align: center;
-    margin-top: 10px;
-    font-size: 30px;
+    margin-top: 20px;
     color: #000;
     font-family: 'Weight';
     text-wrap: wrap;
-    max-width: inherit
+    max-width: inherit;
+    font-size: clamp(25px, 4vw, 30px);
 }
 
 .integrante img:hover~p {
@@ -359,11 +365,18 @@ footer h2 {
 @media (max-width: 1024px) {
     .container {
         flex-direction: column;
-        justify-items: center;
+        text-align: center;
+        align-items: center;
     }
 
     .title h1,
-    h2 {
-        text-align: center;
+    .title h2 {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 590px) {
+    .title.second h1 {
+        margin-bottom: 0px;
     }
 }
