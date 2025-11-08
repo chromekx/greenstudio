@@ -130,6 +130,7 @@ header {
     border: 3px solid #000;
     filter: drop-shadow(0px 5px 0px #000);
     cursor: pointer;
+    align-content: center;
 }
 
 .icon {
@@ -145,7 +146,7 @@ header {
     border: 3px solid #000;
     filter: drop-shadow(0px 5px 0px #000);
     cursor: pointer;
-    padding: 1px;
+    align-content: center;
 }
 
 #menu {
@@ -183,10 +184,6 @@ header {
     .dark-btn,
     .logo {
         margin: 0;
-    }
-
-    .dark-btn {
-        padding: 3px;
     }
 }
 

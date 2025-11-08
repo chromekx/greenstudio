@@ -13,6 +13,9 @@ function darkTheme() {
     containersText.forEach(textP => textP.classList.toggle('dark-mode'));
     menuBtn.classList.toggle('dark-mode');
     document.body.classList.toggle('dark-mode');
+    document.querySelectorAll('.title').forEach(text => text.classList.toggle('dark-mode'));
+    document.querySelectorAll('.integrante img').forEach(symbol => symbol.classList.toggle('dark-mode'));
+    document.querySelectorAll('.integrante p').forEach(symbol => symbol.classList.toggle('dark-mode'));
 };
 
 function openMenu() {

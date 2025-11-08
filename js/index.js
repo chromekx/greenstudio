@@ -61,7 +61,7 @@ const odsColors = [
 
 const svg = document.getElementById('wheelSvg');
 const cx = 250, cy = 250, rOuter = 250, rInner = 90;
-svg.setAttribute('viewBox', '0 0 500 498');
+svg.setAttribute('viewBox', '0 0 500 500');
 const sectors = 17;
 
 function polarToCartesian(cx, cy, r, angleDeg) {
