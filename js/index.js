@@ -6,8 +6,8 @@ const menuBtn = document.querySelector('.icon');
 const carouselControlNext = document.querySelector('.carousel-control-next');
 const carouselControlPrev = document.querySelector('.carousel-control-prev');
 const menu = document.querySelector('.items');
-const girarBtn = document.querySelector('.girarRoletaBtn');
-const desmarcarBtn = document.querySelector('.clearBtn');
+const girarBtn = document.querySelector('.girar-roleta');
+const desmarcarBtn = document.querySelector('.desmarcar-roleta');
 
 function darkTheme() {
     console.log('O botão de modo escuro foi pressionado.');
@@ -61,7 +61,7 @@ const odsColors = [
 
 const svg = document.getElementById('wheelSvg');
 const cx = 250, cy = 250, rOuter = 250, rInner = 90;
-svg.setAttribute('viewBox', '0 0 500 500');
+svg.setAttribute('viewBox', '0 0 500 498');
 const sectors = 17;
 
 function polarToCartesian(cx, cy, r, angleDeg) {

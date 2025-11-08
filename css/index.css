@@ -35,8 +35,8 @@ body.dark-mode,
 .container.dark-mode,
 .carousel-control-next.dark-mode,
 .carousel-control-prev.dark-mode,
-.girarRoletaBtn.dark-mode,
-.clearBtn.dark-mode {
+.girar-roleta.dark-mode,
+.desmarcar-roleta.dark-mode {
     background-color: #222 !important;
     color: #fff !important;
 }
@@ -71,8 +71,8 @@ body.dark-mode,
 .carousel-control-next:hover,
 .carousel-control-prev:hover,
 .symbol i:hover,
-.girarRoletaBtn:hover,
-.clearBtn:hover {
+.girar-roleta:hover,
+.desmarcar-roleta:hover {
     translate: 0px 5px;
     filter: drop-shadow(0px 0px 0px #000);
     transition: 0.3s ease;
@@ -84,8 +84,8 @@ body.dark-mode,
 .carousel-control-next:active,
 .carousel-control-prev:active,
 .symbol i:active,
-.girarRoletaBtn:active,
-.clearBtn:active {
+.girar-roleta:active,
+.desmarcar-roleta:active {
     background-color: #4d945d !important;
     color: #fff !important;
 }
@@ -473,8 +473,8 @@ button.clear {
     stroke: none;
 }
 
-.girarRoletaBtn,
-.clearBtn {
+.girar-roleta,
+.desmarcar-roleta {
     margin: 8px;
     display: block;
     width: 100%;
@@ -516,7 +516,6 @@ footer h2 {
 }
 
 .containerfooter {
-    gap: 25px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -537,7 +536,7 @@ footer h2 {
 }
 
 .redesfooter a:hover {
-    color: #4d945d;
+    color: #000;
     scale: 115%;
 }
 
