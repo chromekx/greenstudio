@@ -1,3 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend';
+    scroll-behavior: smooth;
+    transition: all 0.3s ease;
+}
+
 @font-face {
     font-family: 'Weight';
     src: url("../fonts/weight.ttf") format("truetype");
@@ -17,15 +25,6 @@
     src: url("../fonts/lexend.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lexend';
-    scroll-behavior: smooth;
-    transition: all 0.3s ease;
-    /* da pra controlar a velocidade do slider aqui, com !important */
 }
 
 body.dark-mode,
@@ -335,6 +334,7 @@ footer h2 {
     font-size: clamp(13px, 2vw, 21px);
     font-family: 'Stretch Pro';
     margin: 10px;
+    font-weight: normal;
 }
 
 .containerfooter {

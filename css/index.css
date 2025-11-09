@@ -1,34 +1,34 @@
 @import url(carousel.css);
 
-@font-face {
-    font-family: 'Weight';
-    src: url("../fonts/weight.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Stretch Pro';
-    src: url("../fonts/stretch-pro.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Lexend';
-    src: url("../fonts/lexend.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
 * {
     margin: 0;
     padding: 0;
     font-family: 'Lexend';
     scroll-behavior: smooth;
     transition: all 0.3s ease;
-    /* da pra controlar a velocidade do slider aqui, com !important */
+    /* da pra controlar a velocidade do slider aqui, com !important, ou no carousel.css */
 }
+
+@font-face {
+    font-family: 'Weight';
+    src: url("../fonts/weight.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face {
+    font-family: 'Stretch Pro';
+    src: url("../fonts/stretch-pro.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face {
+    font-family: 'Lexend';
+    src: url("../fonts/lexend.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}    
 
 body.dark-mode,
 .dark-btn.dark-mode,
@@ -345,7 +345,7 @@ header {
     color: #000;
     margin: 0;
     font-size: clamp(14px, 2.5vw, 20px);
-    max-width: 100%;
+    width: 100%;
 }
 
 .container:hover {
@@ -547,7 +547,7 @@ footer h2 {
     scale: 115%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .conjunto, .container.roda {
         flex-direction: column;
     }
@@ -557,7 +557,7 @@ footer h2 {
     }
 
     .container {
-        max-width: 100%;
+        width: inherit;
     }
 
     .fa-arrow-right {
