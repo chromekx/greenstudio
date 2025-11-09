@@ -8,6 +8,7 @@ const carouselControlPrev = document.querySelector('.carousel-control-prev');
 const menu = document.querySelector('.items');
 const girarBtn = document.querySelector('.girar-roleta');
 const desmarcarBtn = document.querySelector('.desmarcar-roleta');
+const centerLabel = document.querySelector('.center-label');
 
 function darkTheme() {
     console.log('O botão de modo escuro foi pressionado.');
@@ -24,6 +25,7 @@ function darkTheme() {
     document.querySelector('.carousel').classList.toggle('dark-mode');
     girarBtn.classList.toggle('dark-mode');
     desmarcarBtn.classList.toggle('dark-mode');
+    centerLabel.classList.toggle('dark-mode');
 };
 
 function openMenu() {
