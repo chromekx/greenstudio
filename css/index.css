@@ -14,21 +14,21 @@
     src: url("../fonts/weight.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-}    
+}
 
 @font-face {
     font-family: 'Stretch Pro';
     src: url("../fonts/stretch-pro.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
-}    
+}
 
 @font-face {
     font-family: 'Lexend';
     src: url("../fonts/lexend.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-}    
+}
 
 body.dark-mode,
 .dark-btn.dark-mode,
@@ -71,8 +71,6 @@ body.dark-mode,
 .logo:hover,
 .dark-btn:hover,
 .icon:hover,
-.carousel-control-next:hover,
-.carousel-control-prev:hover,
 .symbol i:hover,
 .girar-roleta:hover,
 .desmarcar-roleta:hover {
@@ -84,8 +82,6 @@ body.dark-mode,
 .item:active,
 .dark-btn:active,
 .icon:active,
-.carousel-control-next:active,
-.carousel-control-prev:active,
 .symbol i:active,
 .girar-roleta:active,
 .desmarcar-roleta:active {
@@ -222,75 +218,12 @@ header {
     }
 }
 
-.carousel {
-    box-shadow: 0px 10px 40px #0000004f;
-    border-bottom: 0.5px solid #000;
-    margin-bottom: 20px;
-}
-
-.carousel-item img,
-.carousel-item.active img {
-    height: 725px;
-    object-fit: cover;
-    object-position: top;
-    width: 100%;
-    margin-bottom: -10px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute;
-    /* Anchor to the carousel container */
-    top: 50%;
-    /* Place at vertical midpoint */
-    transform: translateY(-50%);
-    /* Shift up by half the button height to center */
-    height: clamp(40px, 2.5vw, 50px);
-    width: clamp(40px, 2.5vw, 50px);
-    color: #000 !important;
-    background-color: #ffffff;
-    border-radius: 50%;
-    font-size: clamp(25px, 2.5vw, 30px);
-    font-weight: bold;
-    cursor: pointer;
-    border: 3px solid #000;
-    filter: drop-shadow(0px 5px 0px #000);
-    opacity: 1 !important;
-}
-
-.carousel-control-prev {
-    left: 15px;
-    /* Position near the left edge */
-}
-
-.carousel-control-next {
-    right: 15px;
-    /* Position near the right edge */
-}
-
-.carousel-indicators {
-    gap: 10px;
-}
-
-.carousel-indicators button {
-    width: 20px !important;
-    height: 20px !important;
-    border-radius: 50%;
-}
-
-.carousel-indicators button.active {
-    border: 3px solid #000;
-    filter: drop-shadow(0px 3px 0px #000);
-    background-color: #23432a;
-    transition: 0.5s;
-}
-
 .symbols {
     display: flex;
     background-color: transparent;
     justify-content: center;
     gap: clamp(30px, 2.5vw, 100px);
-    padding:20px 40px;
+    padding: 20px 40px;
     flex-wrap: wrap;
 }
 
@@ -334,6 +267,7 @@ header {
     margin-bottom: 20px;
     font-weight: normal;
 }
+
 .container {
     display: flex;
     box-shadow: 0px 5px 0px #000;
@@ -548,7 +482,9 @@ footer h2 {
 }
 
 @media (max-width: 1024px) {
-    .conjunto, .container.roda {
+
+    .conjunto,
+    .container.roda {
         flex-direction: column;
     }
 

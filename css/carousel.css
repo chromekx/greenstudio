@@ -1,5 +1,8 @@
 .carousel {
     position: relative;
+    box-shadow: 0px 10px 40px #0000004f;
+    border-bottom: 0.5px solid #000;
+    margin-bottom: 20px;
 }
 
 .carousel.pointer-event {
@@ -127,11 +130,23 @@
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: clamp(40px, 2.5vw, 50px);
+    width: clamp(40px, 2.5vw, 50px);
+    color: #000 !important;
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: clamp(25px, 2.5vw, 30px);
+    font-weight: bold;
+    cursor: pointer;
+    border: 3px solid #000;
+    filter: drop-shadow(0px 5px 0px #000);
+    opacity: 1 !important;
 }
 
 .carousel-control-prev-icon {
@@ -207,4 +222,58 @@
 
 .carousel-dark .carousel-caption {
     color: #000;
+}
+
+.carousel {
+    box-shadow: 0px 10px 40px #0000004f;
+    border-bottom: 0.5px solid #000;
+    margin-bottom: 20px;
+}
+
+.carousel-item img,
+.carousel-item.active img {
+    height: 725px;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+.carousel-control-prev {
+    left: 15px;
+    /* Position near the left edge */
+}
+
+.carousel-control-next {
+    right: 15px;
+    /* Position near the right edge */
+}
+
+.carousel-indicators {
+    gap: 10px;
+}
+
+.carousel-indicators button {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50%;
+}
+
+.carousel-indicators button.active {
+    border: 3px solid #000;
+    filter: drop-shadow(0px 3px 0px #000);
+    background-color: #23432a;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+    translate: 0px 5px;
+    filter: drop-shadow(0px 0px 0px #000);
+    transition: 0.3s ease;
+}
+
+.carousel-control-next:active,
+.carousel-control-prev:active {
+    background-color: #4d945d !important;
+    color: #fff !important;
 }
