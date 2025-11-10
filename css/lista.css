@@ -32,13 +32,12 @@ body.dark-mode,
 .item.dark-mode,
 .icon.dark-mode,
 .container.dark-mode,
-.odsbefore1.dark-mode {
+.effect-cover.dark-mode {
     background-color: #222 !important;
     color: #fff !important;
 }
 
 .container p.dark-mode,
-.integrante p.dark-mode,
 .title.dark-mode {
     color: #fff;
 }
@@ -214,8 +213,10 @@ header {
     margin-bottom: 20px;
 }
 
-.container.one .titulo {
+.container.one .titulo,
+h1 {
     font-family: 'Stretch Pro';
+    font-weight: normal;
     margin: 0;
 }
 
@@ -293,7 +294,7 @@ header {
     align-content: center;
 }
 
-.odsbefore1 {
+.effect-cover {
     content: "";
     translate: 0px -210px;
     position: absolute;
@@ -301,12 +302,12 @@ header {
     height: 193px;
     border-radius: 52.5px;
     background-color: #e7e7e7;
-    translate: 0px -187px;
+    translate: 0px -188px;
     transition: opacity 0.3s ease;
     z-index: 1;
 }
 
-.odsbefore {
+.effect {
     content: "";
     translate: 0px -210px;
     position: absolute;
@@ -333,7 +334,7 @@ header {
     z-index: 0;
 }
 
-.ods:hover+.odsbefore {
+.ods:hover+.effect {
     opacity: 1;
     animation: spin 2s linear infinite;
 }
@@ -347,6 +348,7 @@ header {
 .jogos {
     display: flex;
     flex-direction: row;
+    /* Mantenha como row até 1024px */
     gap: 15px;
     justify-content: stretch;
     width: 100%;
@@ -354,9 +356,13 @@ header {
 
 .jogo {
     height: 300px;
+    /* Defina uma altura fixa */
+    width: calc(33.33% - 10px);
+    /* Ajuste a largura para caber em linha */
     object-fit: cover;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    /* Mude para column se necessário */
     background-color: #fff;
     color: #000000;
     border-radius: 25px;
@@ -365,7 +371,7 @@ header {
 }
 
 .jogo:hover {
-    width: clamp(225px, 10vw, 500px);
+    width: clamp(300px, 70vw, 700px);
     border: 3px solid #4d945d;
     transition: width 0.3s ease;
 }
@@ -429,16 +435,33 @@ footer h2 {
 
     .jogos {
         flex-direction: column;
+        /* Mude para coluna */
     }
 
     .jogo {
-        height: clamp(120px, 10vw, 200px);
+        height: 200px;
+        /* Defina uma altura fixa */
         width: inherit;
+        /* Ajuste a largura para caber em linha */
+        object-fit: cover;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .jogo img {
+        width: 100%;
+        height: 100%;
+        /* Ajuste para ocupar todo o espaço */
+        border-radius: 21.5px;
+        object-fit: cover;
+        /* Garante que a imagem cubra o espaço */
     }
 
     .jogo:hover {
-        width: auto;
-        height: clamp(225px, 10vw, 300px);
-        border: 3px solid #4d945d;
+        height: clamp(300px, 40vw, 500px);
+        /* Ajuste a altura */
+        width: inherit;
+        /* Mantenha a largura em 100% */
     }
 }
