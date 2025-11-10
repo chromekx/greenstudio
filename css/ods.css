@@ -80,6 +80,7 @@ header {
     z-index: 50;
     align-items: center;
     position: fixed;
+    border-radius: 50px;
 }
 
 .logo {
@@ -105,7 +106,7 @@ header {
 }
 
 .item {
-    min-width: 80px;
+    min-width: 100px;
     color: #000;
     background-color: #fff;
     padding: 7px;
@@ -197,66 +198,50 @@ header {
     }
 }
 
-.carousel {
-    box-shadow: 0px 10px 40px #0000004f;
-    border-bottom: 0.5px solid #000;
-    margin-bottom: 20px;
+.background-ods {
+    height: clamp(300px, 30vw, 500px);
+    background-color: #e5233d;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 5px 0px #000;
+    border: 3px solid #000;
+    border-radius: 20px;
+    margin: 20px;
+    align-content: end;
 }
 
-.carousel-item img,
-.carousel-item.active img {
-    height: 725px;
-    object-fit: cover;
-    object-position: top;
+.title {
     width: 100%;
-    margin-bottom: -10px;
+    color: #000;
+    justify-content: center;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute;
-    /* Anchor to the carousel container */
-    top: 50%;
-    /* Place at vertical midpoint */
-    transform: translateY(-50%);
-    /* Shift up by half the button height to center */
-    height: clamp(40px, 2.5vw, 50px);
-    width: clamp(40px, 2.5vw, 50px);
-    color: #000 !important;
-    background-color: #ffffff;
-    border-radius: 50%;
-    font-size: clamp(25px, 2.5vw, 30px);
-    font-weight: bold;
-    cursor: pointer;
+.title h1 {
+    display: flex;
+    max-width: 500px;
+    font-weight: normal;
+    font-family: 'Stretch Pro';
+    font-size: clamp(20px, 5vw, 40px);
+    margin: 20px 40px;
+    text-align: left;
+    text-wrap: wrap;
+    /* adicionar */
+}
+
+.ods {
+    display: flex;
+}
+
+.ods-icon {
+    display: flex;
+    translate: 100px 80px;
+    width: clamp(200px, 30vw, 300px);
+    height: clamp(200px, 30vw, 300px);
+    background-size: cover;
+    box-shadow: 0px 5px 0px #000;
     border: 3px solid #000;
-    filter: drop-shadow(0px 5px 0px #000);
-    opacity: 1 !important;
-}
-
-.carousel-control-prev {
-    left: 15px;
-    /* Position near the left edge */
-}
-
-.carousel-control-next {
-    right: 15px;
-    /* Position near the right edge */
-}
-
-.carousel-indicators {
-    gap: 10px;
-}
-
-.carousel-indicators button {
-    width: 20px !important;
-    height: 20px !important;
-    border-radius: 50%;
-}
-
-.carousel-indicators button.active {
-    border: 3px solid #000;
-    filter: drop-shadow(0px 3px 0px #000);
-    background-color: #23432a;
+    border-radius: 20px;
 }
 
 .conjunto {
@@ -284,9 +269,54 @@ header {
     color: #000;
     margin: 0;
     font-size: clamp(14px, 2.5vw, 20px);
-    width: 100%;
+    width: inherit;
 }
 
 .container:hover {
     filter: drop-shadow(0px 0px 10px #0000004f)
+}
+
+footer {
+    width: 100%;
+    height: clamp(130px, 10vw, 190px);
+    background-color: #23432a;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer h2 {
+    font-size: clamp(13px, 2vw, 21px);
+    font-family: 'Stretch Pro';
+    margin: 10px;
+    font-weight: normal;
+}
+
+.containerfooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.redesfooter {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.redesfooter a {
+    color: #fff;
+    font-size: clamp(30px, 2.5vw, 35px);
+    transition: color 0.2s, scale 0.2s;
+}
+
+.redesfooter a:hover {
+    color: #000;
+    scale: 115%;
 }

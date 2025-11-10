@@ -4,8 +4,6 @@ const containers = document.querySelectorAll('.container');
 const containersText = document.querySelectorAll('.container p');
 const menuBtn = document.querySelector('.icon');
 const menu = document.querySelector('.items');
-const ods = document.querySelectorAll('.ods');
-const effectCover = document.querySelectorAll('.effect-cover');
 
 function darkTheme() {
     console.log('O botão de modo escuro foi pressionado.');
@@ -16,8 +14,6 @@ function darkTheme() {
     menuBtn.classList.toggle('dark-mode');
     document.body.classList.toggle('dark-mode');
     document.querySelectorAll('.title').forEach(text => text.classList.toggle('dark-mode'));
-    ods.forEach(ods => ods.classList.toggle('dark-mode'));
-    effectCover.forEach(cover => cover.classList.toggle('dark-mode'));
 };
 
 function openMenu() {

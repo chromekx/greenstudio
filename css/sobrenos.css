@@ -111,7 +111,7 @@ header {
 }
 
 .item {
-    min-width: 80px;
+    min-width: 100px;
     color: #000;
     background-color: #fff;
     padding: 7px;
