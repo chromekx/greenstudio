@@ -278,8 +278,13 @@ header {
 .titulo {
     font-family: 'Stretch Pro';
     text-align: center;
-    margin-bottom: 20px;
     font-weight: normal;
+}
+
+.titulo.sub {
+    font-family: 'Lexend';
+    font-size: clamp(18px, 1.5vw, 30px);
+    padding-bottom: 10px;
 }
 
 .container {
