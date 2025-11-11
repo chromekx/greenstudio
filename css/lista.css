@@ -197,7 +197,7 @@ header {
 }
 
 .empty {
-    height: clamp(65px, 4vw, 100px);
+    height: 55px;
     width: 100%;
 }
 
@@ -270,6 +270,7 @@ h1 {
     color: #000000;
     border-radius: 50px;
     border: 3px solid #000;
+    aspect-ratio: 1/1;
     box-shadow: 0px 5px 0px #000;
     /* remover filter para evitar sombra indesejada */
     filter: none;
@@ -296,6 +297,7 @@ h1 {
 
 .effect-cover {
     content: "";
+    aspect-ratio: 1/1;
     translate: 0px -210px;
     position: absolute;
     width: 193px;
@@ -463,5 +465,30 @@ footer h2 {
         /* Ajuste a altura */
         width: inherit;
         /* Mantenha a largura em 100% */
+    }
+}
+
+@media (max-width: 768px) {
+    .ods {
+        width: 125px;
+        height: 125px;
+        border-radius: 40px;
+    }
+
+    .effect {
+        translate: 0px -200px;
+    }
+
+    .effect-cover {
+        width: 138px;
+        height: 138px;
+        border-radius: 44px;
+        translate: 0px -132.5px;
+    }
+
+    .parent {
+        width: 150px;
+        height: 150px;
+        border-radius: 47px;
     }
 }
