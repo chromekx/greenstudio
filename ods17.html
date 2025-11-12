@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="imgs/controle2.png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/ods17.css">
+    <title>Erradicação da Pobreza - Green Studio</title>
+</head>
+
+<body>
+    <header>
+        <a class="icon" onclick="openMenu()"><i class="fa-solid fa-bars"></i></a>
+        <a href="index.html" class="logo"><img src="imgs/controle2.png"></a>
+        <div class="items">
+            <a href="lista.html" class="item">Lista das ODS</a>
+            <a href="sobrenos.html" class="item">Sobre Nós</a>
+            <a href="suporte.html" class="item">Suporte</a>
+            <a href="https://brasil.un.org/pt-br/sdgs" class="item">ONU</a>
+        </div>
+        <a class="dark-btn" onclick="darkTheme()">
+            <i class="fa-solid fa-circle-half-stroke" id="darkBtn" alt="Alternar tema"></i>
+        </a>
+    </header>
+
+    <div class="empty"></div>
+
+    <section class="background-ods" style="background-image: url(imgs/.png);">
+        <div class="ods">
+            <div class="ods-icon" style="background-image: url(ods/ods17.png);"></div>
+            <h1 class="title">Parcerias para a Implementação dos Objetivos</h1>
+        </div>
+    </section>
+
+    <div class="conjunto">
+        <div class="container">
+            <p>A ODS 13 tem como objetivo tomar medidas urgentes para combater a mudança climática e seus impactos. Isso envolve fortalecer a capacidade de adaptação às mudanças climáticas e aumentar a resiliência das comunidades e economias em face dos desastres naturais. A ODS 13 também busca melhorar a educação, a conscientização e a capacitação sobre o clima, além de promover a redução das emissões de gases de efeito estufa e investir em soluções de baixo carbono. O objetivo é criar um futuro mais seguro e sustentável, onde as ações para mitigar os efeitos do aquecimento global e proteger os ecossistemas sejam parte de políticas e práticas cotidianas.</p>
+        </div>
+    </div>
+
+    <div class="conjunto">
+        <div class="container">
+            <h2 class="titulo">Jogos relacionados</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="track">
+                    <a class="game" href="">
+                        <img src="jogos/skyline.jpg" alt="Jogo 1">
+                        <div class="info">Cities: Skylines</div>
+                    </a>
+                    <a class="game" href="">
+                        <img src="jogos/eve.webp" alt="Jogo 3">
+                        <div class="info">EVE Online</div>
+                    </a>
+                    <a class="game" href="">
+                        <img src="jogos/simciry.jpg" alt="Jogo 2">
+                        <div class="info">Sim City</div>
+                    </a>
+                    <a class="game" href="">
+                        <img src="jogos/civi.jpeg" alt="Jogo 3">
+                        <div class="info">Civilization VI</div>
+                    </a>
+                    <a class="game" href="">
+                        <img src="jogos/2070.jpeg" alt="Jogo 5">
+                        <div class="info">Anno 2070</div>
+                    </a>
+                </div>
+
+                <div class="controls">
+                    <button class="arrow left" id="prev" style="font-size: 25px;"><i
+                            class="fa-solid fa-caret-left"></i></button>
+                    <button class="arrow right" id="next" style="font-size: 25px;"><i
+                            class="fa-solid fa-caret-right"></i></button>
+                </div>
+            </div>
+            <h2 class="titulo sub">Clique em um para saber sobre!</h2>
+        </div>
+    </div>
+
+    <footer>
+        <div class="containerfooter">
+            <h2><span>&copy;</span> 2025 Gre&#8204;en Studio. Todos os direitos reservados.</h2>
+            <div class="redesfooter">
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://linktr.ee/" target="_blank" aria-label="Links"><i
+                        class="fa-solid fa-share-nodes"></i></a>
+                <a href="https://wa.me/" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/ods.js"></script>
+</body>
+
+</html>

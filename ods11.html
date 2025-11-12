@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="imgs/controle2.png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/ods11.css">
+    <title>Erradicação da Pobreza - Green Studio</title>
+</head>
+
+<body>
+    <header>
+        <a class="icon" onclick="openMenu()"><i class="fa-solid fa-bars"></i></a>
+        <a href="index.html" class="logo"><img src="imgs/controle2.png"></a>
+        <div class="items">
+            <a href="lista.html" class="item">Lista das ODS</a>
+            <a href="sobrenos.html" class="item">Sobre Nós</a>
+            <a href="suporte.html" class="item">Suporte</a>
+            <a href="https://brasil.un.org/pt-br/sdgs" class="item">ONU</a>
+        </div>
+        <a class="dark-btn" onclick="darkTheme()">
+            <i class="fa-solid fa-circle-half-stroke" id="darkBtn" alt="Alternar tema"></i>
+        </a>
+    </header>
+
+    <div class="empty"></div>
+
+    <section class="background-ods" style="background-image: url(imgs/.png);">
+        <div class="ods">
+            <div class="ods-icon" style="background-image: url(ods/ods11.jpg);"></div>
+            <h1 class="title">Cidades e Comunidades Sustentáveis</h1>
+        </div>
+    </section>
+
+    <div class="conjunto">
+        <div class="container">
+            <p>A ODS 11 tem como objetivo tornar as cidades e os assentamentos humanos inclusivos, seguros, resilientes e sustentáveis. Isso envolve garantir o acesso a moradia adequada, serviços básicos e transporte acessível para todos, além de promover a gestão sustentável dos recursos urbanos. A ODS 11 busca também melhorar a qualidade de vida nas cidades, promovendo espaços públicos seguros e verdes, reduzindo os impactos ambientais, e aumentando a capacidade das comunidades para enfrentar desastres e mudanças climáticas. O objetivo é criar ambientes urbanos que sejam não apenas habitáveis, mas também equilibrados e adaptados às necessidades de todos os cidadãos.</p>
+        </div>
+    </div>
+
+    <div class="conjunto">
+        <div class="container">
+            <h2 class="titulo">Jogos relacionados</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="track">
+                    <a class="game" href="">
+                        <img src="jogos/skyline.jpg" alt="Jogo 1">
+                        <div class="info">Cities: Skylines</div>
+                    </a>
+                    <a class="game" href="">
+                        <img src="jogos/simciry.jpg" alt="Jogo 2">
+                        <div class="info">Sim City</div>
+                    </a>
+                    <a class="game" href="">
+                        <img src="jogos/mine.jpg" alt="Jogo 3">
+                        <div class="info">Minecraft</div>
+                    </a>
+                    <a class="game" href="">
+                        <img src="jogos/blockhood.jpg" alt="Jogo 4">
+                        <div class="info">Block'Hood</div>
+                    </a>
+                    <a class="game" href="">
+                        <img src="jogos/eco.jpg" alt="Jogo 5">
+                        <div class="info">Eco</div>
+                    </a>
+                </div>
+
+                <div class="controls">
+                    <button class="arrow left" id="prev" style="font-size: 25px;"><i
+                            class="fa-solid fa-caret-left"></i></button>
+                    <button class="arrow right" id="next" style="font-size: 25px;"><i
+                            class="fa-solid fa-caret-right"></i></button>
+                </div>
+            </div>
+            <h2 class="titulo sub">Clique em um para saber sobre!</h2>
+        </div>
+    </div>
+
+    <footer>
+        <div class="containerfooter">
+            <h2><span>&copy;</span> 2025 Gre&#8204;en Studio. Todos os direitos reservados.</h2>
+            <div class="redesfooter">
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://linktr.ee/" target="_blank" aria-label="Links"><i
+                        class="fa-solid fa-share-nodes"></i></a>
+                <a href="https://wa.me/" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/ods.js"></script>
+</body>
+
+</html>
