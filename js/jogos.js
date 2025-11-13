@@ -41,9 +41,6 @@ miniaturas.forEach((miniatura, index) => {
 });
 
 // dar uma olhada nesse
-const videoJogo = document.querySelector(".video-jogo");
-const miniaturas = document.querySelectorAll(".miniaturas img, .miniaturas video");
-
 if (videoJogo && miniaturas.length > 0) {
     // Salva o HTML original do vídeo principal
     const videoPrincipal = videoJogo.querySelector("video");
