@@ -7,8 +7,9 @@ const carouselControlNext = document.querySelector('.carousel-control-next');
 const carouselControlPrev = document.querySelector('.carousel-control-prev');
 const menu = document.querySelector('.items');
 const girarBtn = document.querySelector('.girar-roleta');
-const desmarcarBtn = document.querySelector('.desmarcar-roleta');
+const visitarBtn = document.querySelector('.visitar-roleta');
 const centerLabel = document.querySelector('.center-label');
+const customAviso = document.getElementsByClassName('custom-aviso');
 
 function darkTheme() {
     console.log('O botão de modo escuro foi pressionado.');
@@ -24,8 +25,9 @@ function darkTheme() {
     document.querySelectorAll('.symbol p').forEach(symbol => symbol.classList.toggle('dark-mode'));
     document.querySelector('.carousel').classList.toggle('dark-mode');
     girarBtn.classList.toggle('dark-mode');
-    desmarcarBtn.classList.toggle('dark-mode');
+    visitarBtn.classList.toggle('dark-mode');
     centerLabel.classList.toggle('dark-mode');
+    customAviso.classList.toggle('dark-mode');
 };
 
 function openMenu() {
@@ -116,7 +118,7 @@ for (let i = 0; i < sectors; i++) {
 
     // ícone SVG branco
     const sticker = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-    sticker.setAttributeNS('http://www.w3.org/1999/xlink', 'href', `./ods/${i + 1}.svg`);
+    sticker.setAttributeNS('http://www.w3.org/1999/xlink', 'href', `./ods_img/${i + 1}.svg`);
     sticker.setAttribute('x', p.x - 25);
     sticker.setAttribute('y', p.y - 25);
     sticker.setAttribute('width', 50);
@@ -176,8 +178,24 @@ function updateCenter(index, name) {
     }
 }
 
-document.getElementById('clearBtn').addEventListener('click', () => { if (lastSelected) lastSelected.classList.remove('selected'); lastSelected = null; updateCenter(); });
-window.onSegmentClick = onSegmentClick;
+visitarBtn.addEventListener('click', () => {
+    if (lastSelected) {
+        // Obtém o índice da ODS selecionada
+        const odsIndex = lastSelected.dataset.index;
+        // Redireciona para a página da ODS (ajuste o caminho conforme sua estrutura)
+        window.location.href = `ods_html/ods${Number(odsIndex) + 1}.html`;
+    } else {
+        // Exibe um aviso se nenhuma ODS estiver selecionada
+        Swal.fire({
+            title: 'Atenção!',
+            text: 'Selecione uma ODS antes de continuar!',
+            customClass: {
+                popup: document.body.classList.contains('dark-mode') ? 'custom-aviso dark-mode' : 'custom-aviso'
+            },
+            confirmButtonColor: '#4d945d'
+        });
+    }
+});
 
 const girarRoletaBtn = document.getElementById('girarRoletaBtn');
 
