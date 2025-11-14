@@ -336,7 +336,7 @@ header {
     display: flex;
     font-weight: normal;
     font-family: 'Stretch Pro';
-    padding: clamp(20px, 2.5vw, 40px);
+    padding: 40px;
     padding-bottom: 0;
     text-align: center;
     text-wrap: wrap;
@@ -454,6 +454,7 @@ footer h2 {
 
     .title-relation {
         justify-self: center;
+        padding-bottom: 20px;
     }
 }
 
