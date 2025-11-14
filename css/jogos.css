@@ -254,7 +254,7 @@ header {
     flex-direction: column;
     justify-content: end;
     position: relative;
-    background: linear-gradient(to right, #000, #000000, #000000e3, transparent);
+    background: linear-gradient(to right, #000, #000000de, #000000b4, #0000008e, transparent);
     max-width: 500px;
     width: fit-content;
     height: 100%;
@@ -463,7 +463,7 @@ footer h2 {
         width: 100%;
         max-width: 999px;
         align-items: center;
-        background: linear-gradient(to top, #000, #000000, #000000e3, transparent);
+        background: linear-gradient(to top, #000, #000000de, #0000008e, transparent);
     }
 
     .title {
