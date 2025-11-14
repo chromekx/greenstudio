@@ -160,8 +160,8 @@ header {
 
 .icon {
     display: none;
-    height: clamp(40px, 2.5vw, 50px);
-    width: clamp(40px, 2.5vw, 50px);
+    height: 40px;
+    width: 40px;
     color: #000;
     background-color: #fff;
     border-radius: 50%;
